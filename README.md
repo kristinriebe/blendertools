@@ -23,7 +23,7 @@ Use their 3D coordinates for positions in Blender and their
 radial velocities for color. This should in principle also work for other star catalogs, as long as galactic coordinates and distances are given. You would need to adjust the column names and coloring.
 I've used it for up to 1 million stars without problems, but performance will probably go down rapidly with larger catalogs.
 
-[<img class="header" src="https://www.rave-survey.org/project/wp-content/uploads/ravestars-map-zoomout-2d.png](ravestars-image.png)
+[<img style="width: 400px;" src="https://www.rave-survey.org/project/wp-content/uploads/ravestars-map-zoomout-2d.png"/>](https://www.rave-survey.org/project/wp-content/uploads/ravestars-map-zoomout-2d.png)
 
 An example file with RAVE-stars extracted from the RAVE database, DR4 (https://www.rave-survey.org/query) is also included:
 `ravestars-demo.csv`.
