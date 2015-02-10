@@ -3,7 +3,7 @@
 """ Shift keyframes in order to speed-up/slow-down a movie
 or give time for another sequence of animations in between.
 
-Kristin Riebe, AIP, 04.02.2015, kriebe@aip.de
+Kristin Riebe, E-Science at AIP, 04.02.2015, kriebe@aip.de
 """
 # NOTE: This can break your animation completely, if keyframes 
 # 'overtake' one another. There's no error handling included here.
@@ -42,7 +42,7 @@ def getActionsForObjects(namepattern="*"):
     for obj in objects:
         print("Object "+obj.name)
 
-        if obj.animation_data:
+        if obj.animation_data is not None:
             action = obj.animation_data.action
             actions.add(action)
 
@@ -50,7 +50,7 @@ def getActionsForObjects(namepattern="*"):
         for matslot in obj.material_slots:
             print("Material "+matslot.name)
 
-            if matslot.material.animation_data:
+            if matslot.material.animation_data is not None:
                 action = matslot.material.animation_data.action
                 actions.add(action)
 

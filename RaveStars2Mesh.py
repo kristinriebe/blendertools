@@ -3,6 +3,8 @@
 Read points (RAVE-stars) from a csv-file into vertices of mesh-objects.
 Use their 3D coordinates for positions in Blender and their 
 radial velocities for color.
+
+Kristin Riebe, E-Science at AIP, kriebe@aip.de, Oct. 2014
 """
 # It's slow if creating one object per point, 
 # so for stars I append the points as vertices to meshs
@@ -13,10 +15,9 @@ radial velocities for color.
 # TODO: 
 # - properly clean up unused lists (lines, stars)
 #
-# Kristin Riebe, Oct. 2014
 # 
 # Updates: 
-#   16.12.2015: properly read csv-files
+#   16.12.2014: properly read csv-files
 #   19.01.2015: delete unused materials
 
 import bpy, os, sys
