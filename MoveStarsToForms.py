@@ -51,7 +51,7 @@ def ShapekeyVerticesToSphere(obj, keyname, parameters):
 
 
 def ShapekeyVerticesToMap(obj, keyname, parameters):
-    """Move vertices of mesh to a flat map
+    """Move vertices of mesh to a flat, equirectangular map
     obj  -- mesh-object with stars as vertices
     keyname -- name for shapekey
     parameters -- dictionary of necessary parameters,
@@ -185,7 +185,7 @@ def addShapeAnimation(namepattern, keyname0, iframe0, keyname1, iframe1):
         key0 = keyblocks[keyname0]
         key1 = keyblocks[keyname1]
             
-        # Initial shape, value of new shapekey is 0:
+        # Initial shape, value of new shapekey is 0
         iframe = iframe0
         key0.value = 1
         key1.value = 0

@@ -232,7 +232,7 @@ def createHrvMeshs(starlist, origin, halosize, posfac):
     matcyan = makeHaloMaterial('Mesh-cyan', cyan, halosize)
     matblue = makeHaloMaterial('Mesh-blue', blue, halosize)
     
-    # Create meshs for each group of vertices:
+    # Create meshs for each group of vertices
     createMesh(origin, verts_r, matred, 'stars-red') 
     createMesh(origin, verts_o, matorange, 'stars-orange') 
     createMesh(origin, verts_y, matyellow, 'stars-yellow') 
@@ -265,16 +265,17 @@ if __name__ == '__main__':
     
     # Delete everything we don't need anymore or want to recreate   
     # Be careful to not remove more than you want!
-    
     deleteObjects('stars-*')
     
-    # Delete unused materials
+    # Delete unused materials. This would also be done automatically 
+    # when restarting Blender or reloading the file.
     deleteUnusedMaterials()
     
     # Read data from file, adjust values
     lines = readDaiquiriCsv(filename)
     starlist = adjustValues(lines)
 
-    # Go through the stars, add them to corresponding meshs
+    # Go through the stars, sort them by radial velocity and 
+    # add them to corresponding meshs
     createHrvMeshs(starlist, origin,  halosize, posfac)
         

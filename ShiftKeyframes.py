@@ -103,6 +103,11 @@ def shiftKeyframes(actions=bpy.data.actions, factor=1,frameshift=0,
 
 if __name__ == "__main__":
     
+    # Just stretch everything by factor 3
     #shiftKeyframes(factor=3)
+    
+    # Get actions for specified objects only
     actions = getActionsForObjects(namepattern='name-*')
+    
+    # Stretch only keyframes for these animation actions
     shiftKeyframes(actions=actions, factor=2)
