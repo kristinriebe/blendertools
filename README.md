@@ -23,7 +23,7 @@ Use their 3D coordinates for positions in Blender and their
 radial velocities for color. This should in principle also work for other star catalogs, as long as galactic coordinates and distances are given. You would need to adjust the column names and coloring.
 I've used it for up to 1 million stars without problems, but performance will probably go down rapidly with larger catalogs.
 
-[<img style="width: 400px;" src="https://www.rave-survey.org/project/wp-content/uploads/ravestars-map-zoomout-2d.png"/>](https://www.rave-survey.org/project/wp-content/uploads/ravestars-map-zoomout-2d.png)
+[<img style="width: 400px;" src="https://escience.aip.de/img/vis/screen-ravestars-renderedimage.png"/>](https://escience.aip.de/img/vis/screen-ravestars-renderedimage.png)
 
 An example file with RAVE-stars extracted from the [RAVE database, DR4](https://www.rave-survey.org/query) is given here:
 [examples/ravestars-demo.csv](examples/ravestars-demo.csv).
@@ -41,7 +41,7 @@ Move stars (vertices of a mesh) to different forms, e.g. a flat map or a sphere.
 [<img style="width: 400px;" src="https://escience.aip.de/img/vis/ravestars-transforms.png"/>](https://escience.aip.de/img/vis/ravestars-transforms.png)
 
 A tutorial for using this script with the RAVE stars is available here:
-[RAVE-stars tutorial](https://escience.aip.de/visualisation/movies/blender-ravestars-transformations/).
+[Star transformations tutorial](https://escience.aip.de/visualisation/movies/blender-ravestars-transformations/).
 
 The demo-blend file of this tutorial is also stored in this repository:
 [examples/ravestars-demo-transform.blend](examples/ravestars-demo-transform.blend).
