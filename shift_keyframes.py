@@ -21,8 +21,8 @@ import fnmatch
 
 
 def get_actions_for_objects(namepattern="*"):
-    """Collect all actions for the matching objects and their
-    materials. Each material-action is to be used only once.
+    """Collect all actions for the matching objects, their data 
+    and their materials. Each material-action is to be used only once.
     Return set of actions that can be used as input for
     shift_keyframes().
 
@@ -51,6 +51,10 @@ def get_actions_for_objects(namepattern="*"):
 
         if obj.animation_data is not None:
             action = obj.animation_data.action
+            actions.add(action)
+
+        if obj.data.animation_data is not None:
+            action = obj.data.animation_data.action
             actions.add(action)
 
         # Loop over materials of this object
