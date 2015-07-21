@@ -46,9 +46,9 @@ def animate_camera(objcamera, objpath, objtrackto, startframe=1, duration=200):
     NOTE: this also clears any animation data of the path beforehand, 
     so use with care!
     
-    objcamera    -- camera object which shall be animated
-    objpath      -- curve object along which the camera should fly
-    objtrackto   -- object (e.g. empty), to which the camera's view
+    objcamera   -- camera object which shall be animated
+    objpath     -- curve object along which the camera should fly
+    objtrackto  -- object (e.g. empty), to which the camera's view
                    will be locked
     startframe  -- frame at which animation will start, default: 1
     duration    -- duration of one complete fly-around along the path, in frames
@@ -121,7 +121,7 @@ def run():
     # animate camera 
     # -- NOTE THAT THIS REMOVE ANY PREVIOUS CAMERA PATH ANIMATION! 
     objcamera = bpy.data.objects["Camera"]
-    animate_camera(objcamera, objpath, objtrack, startframe = 0, duration=300)
+    animate_camera(objcamera, objpath, objtrack, startframe=0, duration=300)
 
     return
 
