@@ -13,8 +13,9 @@ For questions, comments, suggestions, please contact me at
 Kristin Riebe, kriebe@aip.de
 
 
-### animat_camera.py
-Creates a path for a camera to follow and adds an empty object to which the camera looks.
+### animate_camera.py
+Creates a path for the camera to follow (or uses a given one) and creates and empty object to which the camera looks (or uses a given one). The script creates the necessary constraints and keyframes so that the camera moves along the path when moving the slider along the timeline or playing the animation.
+
 
 ### shift_keyframes.py
 Shift keyframes in order to speed-up/slow-down a movie
