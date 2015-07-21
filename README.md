@@ -13,6 +13,9 @@ For questions, comments, suggestions, please contact me at
 Kristin Riebe, kriebe@aip.de
 
 
+### animat_camera.py
+Creates a path for a camera to follow and adds an empty object to which the camera looks.
+
 ### shift_keyframes.py
 Shift keyframes in order to speed-up/slow-down a movie
 or give time for another sequence of animations in between.
