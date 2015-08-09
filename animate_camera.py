@@ -1,5 +1,6 @@
 import bpy
 
+
 def add_camera_path(pathname, radius, location):
     """Add a circle as camera path
 
@@ -40,36 +41,29 @@ def add_trackto_object(tracktoname, location):
 
 
 def animate_camera(objcamera, objpath, objtrackto, startframe=1, duration=200):
-    """Animate the camera (cameraname) by following along the 
-    given path (pathname), view locked to the given trackto-object 
-    (tracktoname).
+    """Animate the camera by following along the given path, 
+    with the view locked to the given trackto-object.
     NOTE: this also clears any animation data of the path beforehand, 
     so use with care!
-    
+
     objcamera   -- camera object which shall be animated
     objpath     -- curve object along which the camera should fly
     objtrackto  -- object (e.g. empty), to which the camera's view
                    will be locked
     startframe  -- frame at which animation will start, default: 1
-    duration    -- duration of one complete fly-around along the path, in frames
+    duration    -- duration of one complete fly-around along the path, 
+                   in frames
     """
 
-    # reset camera
-    objcamera.location = (0,0,0)
-
     # add FollowPath constraint
-    bpy.context.scene.objects.active = objcamera
-    bpy.ops.object.constraint_add(type='FOLLOW_PATH')
-    bpy.context.object.constraints["Follow Path"].target = objpath
-
+    c = objcamera.constraints.new(type='FOLLOW_PATH')
+    c.target = objpath
 
     # add TrackTo constraint to camera
-    bpy.context.scene.objects.active = objcamera
-    bpy.ops.object.constraint_add(type='TRACK_TO')
-    bpy.context.object.constraints["Track To"].target = objtrackto
-
-    bpy.context.object.constraints["Track To"].track_axis = 'TRACK_NEGATIVE_Z'
-    bpy.context.object.constraints["Track To"].up_axis = 'UP_Y'
+    c = objcamera.constraints.new(type='TRACK_TO')
+    c.target = objtrackto
+    c.track_axis = 'TRACK_NEGATIVE_Z'
+    c.up_axis = 'UP_Y'
 
     # animate camera path
     # by inserting key frames on evaluation time of path
@@ -118,8 +112,11 @@ def run():
     #objpath = bpy.data.objects[pathname]
     #objtrack = bpy.data.objects[tracktoname]
 
+    # reset camera location or define offset from camera path here
+    objcamera.location = (0,0,0)
+
     # animate camera 
-    # -- NOTE THAT THIS REMOVE ANY PREVIOUS CAMERA PATH ANIMATION! 
+    # -- NOTE THAT THIS REMOVES ANY PREVIOUS CAMERA PATH ANIMATION!
     objcamera = bpy.data.objects["Camera"]
     animate_camera(objcamera, objpath, objtrack, startframe=0, duration=300)
 
@@ -128,6 +125,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-    
-    
-    
