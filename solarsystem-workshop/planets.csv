@@ -8,4 +8,4 @@
 "Saturn",60268,20.7,1433449370,0.09796,26.73,27.653,4.901,-49.23,0.439583333333333,0.0557,10759.22,"saturn_bj.jpg","[0.8,0.3,0]"
 "Uranus",25559,28,2870671400,0.0229,97.77,97.986,12.129,-3.324,0.71833,0.04722,30687.15,"uranus.png","[0,0.8,0.2]"
 "Neptun",24764,32.9,4498542600,0.0171,28.32,-19.664,21.058,-158.997,0.6713,0.008678,60190.03,"neptune.jpg","[0,0.4,0.8]"
-# radius, distance in km; rotperiod and orbitperiod in days, art_distance = artificial distance in Blender units
+# radius, distance in km; rotperiod, orbitperiod in days; art_distance = artificial distance in Blender units; tilt angles in degrees,,,,,,,,
