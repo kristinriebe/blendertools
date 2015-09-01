@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Blendertools : A collection of Python scripts to make (my) life easier with Blender.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Blendertools</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/kristinriebe/blendertools">View on GitHub</a>
+
+          <h1 id="project_title">Blendertools</h1>
+          <h2 id="project_tagline">A collection of Python scripts to make (my) life easier with Blender.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/kristinriebe/blendertools/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/kristinriebe/blendertools/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="blender-tools" class="anchor" href="#blender-tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>Blender Tools</h1>
+
+<p>A collection of Python scripts to make (my) life easier with Blender.</p>
+
+<p>Some scripts are generic enough to be useful for other people as well. Others are tuned to a very specific task, but still contain some useful code-snippets.</p>
+
+<p>There's no guarantee for my scripts to work; feel free to use them, but at your own risk.</p>
+
+<p>For questions, comments, suggestions, please contact me at<br>
+Kristin Riebe, <a href="mailto:kriebe@aip.de">kriebe@aip.de</a></p>
+
+<h3>
+<a id="animate_camerapy" class="anchor" href="#animate_camerapy" aria-hidden="true"><span class="octicon octicon-link"></span></a>animate_camera.py</h3>
+
+<p>Creates a path for the camera to follow (or uses a given one) and creates and empty object to which the camera looks (or uses a given one). The script creates the necessary constraints and keyframes so that the camera moves along the path when moving the slider along the timeline or playing the animation.</p>
+
+<h3>
+<a id="shift_keyframespy" class="anchor" href="#shift_keyframespy" aria-hidden="true"><span class="octicon octicon-link"></span></a>shift_keyframes.py</h3>
+
+<p>Shift keyframes in order to speed-up/slow-down a movie
+or give time for another sequence of animations in between.</p>
+
+<h3>
+<a id="ravestars_meshpy" class="anchor" href="#ravestars_meshpy" aria-hidden="true"><span class="octicon octicon-link"></span></a>ravestars_mesh.py</h3>
+
+<p>Read points (RAVE-stars) from a csv-file into vertices of mesh-objects.
+Use their 3D coordinates for positions in Blender and their 
+radial velocities for color. This should in principle also work for other star catalogs, as long as galactic coordinates and distances are given. You would need to adjust the column names and coloring.
+I've used it for up to 1 million stars without problems, but performance will probably go down rapidly with larger catalogs.</p>
+
+<p><a href="https://escience.aip.de/img/vis/screen-ravestars-renderedimage.png"><img src="https://escience.aip.de/img/vis/screen-ravestars-renderedimage.png"></a></p>
+
+<p>An example file with RAVE-stars extracted from the <a href="https://www.rave-survey.org/query">RAVE database, DR4</a> is given here:
+<a href="examples/ravestars-demo.csv">examples/ravestars-demo.csv</a>.</p>
+
+<p>A tutorial for using this script to create a nice animation is given here:
+<a href="https://escience.aip.de/visualisation/movies/blender-ravestars/">RAVE-stars tutorial</a>.
+The demo-<code>blend</code> file from the tutorial is also available in this repository:
+<a href="examples/ravestars-demo.blend">examples/ravestars-demo.blend</a>.</p>
+
+<p>The final animation for flying around the RAVE star distribution is available here: <a href="https://www.rave-survey.org/project/gallery/movies/#RAVE-flight">RAVE flight movie</a>.</p>
+
+<h3>
+<a id="deform_starmeshpy" class="anchor" href="#deform_starmeshpy" aria-hidden="true"><span class="octicon octicon-link"></span></a>deform_starmesh.py</h3>
+
+<p>Move stars (as vertices of a mesh) to different forms, e.g. a flat map or a sphere. This is useful for nice shape-transformation animations, as used in the <a href="https://www.rave-survey.org/project/gallery/movies/#RAVE-flight">RAVE flight movie</a>. The script works best together with the RAVE-stars meshes loaded via <a href="ravestars_mesh.py">ravestars_mesh.py</a>.</p>
+
+<p><a href="https://escience.aip.de/img/vis/ravestars-transforms.png"><img src="https://escience.aip.de/img/vis/ravestars-transforms.png"></a></p>
+
+<p>A tutorial for using this script with the RAVE stars is available here:
+<a href="https://escience.aip.de/visualisation/movies/blender-ravestars-transformations/">Star transformations tutorial</a>.</p>
+
+<p>The demo-blend file of this tutorial is also stored in this repository:
+<a href="examples/ravestars-demo-transform.blend">examples/ravestars-demo-transform.blend</a>.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Blendertools maintained by <a href="https://github.com/kristinriebe">kristinriebe</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-17603670");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
