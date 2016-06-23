@@ -51,11 +51,14 @@ def get_actions_for_objects(namepattern="*"):
 
         if obj.animation_data is not None:
             action = obj.animation_data.action
-            actions.add(action)
+            if action is not None:
+                actions.add(action)
 
-        if obj.data.animation_data is not None:
-            action = obj.data.animation_data.action
-            actions.add(action)
+        if obj.data is not None:
+            if obj.data.animation_data is not None:
+                action = obj.data.animation_data.action
+                if action is not None:
+                    actions.add(action)
 
         # Loop over materials of this object
         for matslot in obj.material_slots:
@@ -63,7 +66,8 @@ def get_actions_for_objects(namepattern="*"):
 
             if matslot.material.animation_data is not None:
                 action = matslot.material.animation_data.action
-                actions.add(action)
+                if action is not None:
+                    actions.add(action)
 
     return actions
 
@@ -100,7 +104,7 @@ def shift_keyframes(actions=bpy.data.actions, factor=1, frameshift=0,
                 if (keyframe.co[0] >= frame_start
                         and keyframe.co[0] <= frame_end):
 
-                    print("    %s" % keyframe.co)  # coordinates x,y
+                    #print("    %s" % keyframe.co)  # coordinates x,y
 
                     keyframe.co[0] = keyframe.co[0]*factor + frameshift
                     keyframe.handle_left[0] = (keyframe.handle_left[0]*factor
